@@ -1,0 +1,24 @@
+{
+  "name": "do-you-even-steam",
+  "version": "1.0.0",
+  "description": "Code 301 final project",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlox7/Do-You-Even-Steam.git"
+  },
+  "author": "Carlo Carlos Patrick Michael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlox7/Do-You-Even-Steam/issues"
+  },
+  "homepage": "https://github.com/carlox7/Do-You-Even-Steam#readme"
+}
