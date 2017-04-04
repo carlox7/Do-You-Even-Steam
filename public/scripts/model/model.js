@@ -6,7 +6,7 @@ steamUser.all = [];
 steamUser.requestSteamData = function(callback){
   $.ajax({
     url: `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=C41AD8B5B0998A582AFA4872B4E51E6C&steamid=${steamUser.steamId.response.steamid}&format=json&include_appinfo=1`,
-    method: 'GET',
+    method: 'GET'
   })
   .then(data => steamUser.all = data)
   .then(steamUser.totalTimePlayed);
