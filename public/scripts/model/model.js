@@ -29,7 +29,28 @@ steamUser.requestSteamId = function(callback) {
   .then(callback);
 };
 
-steamUser.toHtml = function (){
-  let template = Handlebars.compile($('#stats-template').text());
-  $('#game-stats').append(template(this));
+//Maps total time played for each game in minutes and sums up all values and divides by 60 to get hours played
+steamUser.totalTimePlayed = () => {
+  let totalMinutes = steamUser.all.response.games.map(function (data) {
+    return data.playtime_forever;
+  }).reduce((acc, val) => acc + val);
+  steamUser.totalTime = Math.round(totalMinutes / 60);
+  steamUser.toHtml();
 };
+
+steamUser.gameNames = () => {
+  steamUser.all.response.games.map(function (data){
+    console.log(data.name);
+    return data.name;
+  });
+};
+
+steamUser.shameWalk = () => Math.round(steamUser.totalTime / 3);
+
+steamUser.moneyShame = () => steamUser.totalTime * 13;
+
+steamUser.londonShame = () => Math.round(steamUser.totalTime / 9);
+
+steamUser.harryPotterShame = () => Math.round(steamUser.totalTime / 59);
+
+steamUser.pokemonShame = () => Math.round(steamUser.totalTime / 50);
