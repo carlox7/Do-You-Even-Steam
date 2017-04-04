@@ -8,18 +8,40 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/state.css">
-    
+    <script src="https://use.fontawesome.com/d8ce3ea8be.js"></script>
+
+    <script id="stats-template" type="text/x-handlebars-template">
+      <p>This is your total number of hours: {{totalTime}}</p>
+      <!-- <p></p> -->
+    </script>
+
   </head>
   <body>
     <h1>Look, A web page...ᕕ(◉ ͜ʖ◉)ᕗ</h1>
-    <form id="steam-form">
-      <label>Enter Steam ID<input type="text" placeholder="Here"></label>
-      <button type="button" name="button">Submit</button>
-    </form>
+    <header id="main-nav">
+      <i class="fa fa-bars fa-3x" aria-hidden="true" id="hamburger"></i>
+      <ul id="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Stats</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </header>
+    <section id="home-page">
+      <form id="steam-form">
+        <label>Enter Steam ID<input type="text" placeholder="Here"></label>
+        <button type="button" name="button">Submit</button>
+      </form>
+    </section>
+    <section id="game-stats">
+      <p>Stats</p>
+    </section>
+    <section id="about-us">
+      <p>About us</p>
+    </section>
+    <footer>Superior Steamers
+    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 

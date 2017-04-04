@@ -1,0 +1,15 @@
+@media only screen and (min-width: 745px){
+  #hamburger{
+    display: none;
+  }
+
+  #main-nav ul{
+    display: block;
+  }
+
+  #main-nav ul li{
+     display: inline;
+     float: none;
+     font-size: 1em;
+   }
+}
