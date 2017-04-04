@@ -35,6 +35,12 @@ steamUser.totalTimePlayed = () => {
     return data.playtime_forever;
   }).reduce((acc, val) => acc + val);
   steamUser.totalTime = Math.round(totalMinutes / 60);
+  steamUser.shameWalk = Math.round(steamUser.totalTime / 3);
+  steamUser.moneyShame = steamUser.totalTime * 13;
+  steamUser.londonShame = Math.round(steamUser.totalTime / 9);
+  steamUser.harryPotterShame = Math.round(steamUser.totalTime / 59);
+  steamUser.pokemonShame = Math.round(steamUser.totalTime / 50);
+  steamUser.codeFellowsShame = Number((steamUser.totalTime / 810).toFixed(2));
   steamUser.toHtml();
 };
 
@@ -45,7 +51,10 @@ steamUser.gameNames = () => {
   });
 };
 
-steamUser.shameWalk = () => Math.round(steamUser.totalTime / 3);
+steamUser.shameWalk = () => {
+  Math.round(steamUser.totalTime / 3);
+  steamUser.toHtml();
+};
 
 steamUser.moneyShame = () => steamUser.totalTime * 13;
 
