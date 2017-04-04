@@ -1,0 +1,9 @@
+#main-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+}
+
+#main-nav:hover ul {
+  display: block;
+}

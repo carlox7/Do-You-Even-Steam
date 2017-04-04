@@ -31,3 +31,8 @@ steamData.requestSteamId = function(callback) {
   .then(data => steamData.steamId = data)
   .then(callback);
 };
+
+steamData.toHtml = function (){
+  let template = Handlebars.compile($('#stats-template').text());
+  $('#game-stats').append(template(this));
+};
