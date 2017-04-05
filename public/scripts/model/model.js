@@ -3,6 +3,7 @@
 const steamUser = {};
 steamUser.all = [];
 
+
 steamUser.requestSteamData = function(callback){
   $.ajax({
     url: '/games',
@@ -14,25 +15,44 @@ steamUser.requestSteamData = function(callback){
   .then(data => {
     steamUser.all = data;
   })
-  .then(steamUser.totalTimePlayed);
+  .then(() => {
+    steamUser.totalTimePlayed();
+  })
+  .then(()=>{
+    if (localStorage.steamId){
+      statsController.init();
+    }
+  });
 };
+
+
+steamUser.showStatsPage = function(){
+  if (localStorage.steamId){
+    steamUser.steamId = localStorage.steamId;
+    steamUser.requestSteamData();
+    statsController.init();
+  }
+}
+steamUser.showStatsPage();
+
+
+
 
 $('#steam-form').submit(function(event){
   event.preventDefault();
   event.stopPropagation();
   if($.isNumeric($('#steam-form input').val()) && ($('#steam-form input').val().length == 17)){
-    console.log('success');
     steamUser.steamId = $('#steam-form input').val()
     steamUser.requestSteamData(steamUser.steamId);
     statsController.init();
+    localStorage.setItem("steamId", $('#steam-form input').val())
   }
 
   else {
-  console.log('fail');
-  steamUser.vanityUrl = $('#steam-form input').val();
-  steamUser.requestSteamId(steamUser.requestSteamData);
-  statsController.init();
-}
+    steamUser.vanityUrl = $('#steam-form input').val();
+    steamUser.requestSteamId(steamUser.requestSteamData);
+    statsController.init();
+  }
 
 });
 
@@ -47,8 +67,9 @@ steamUser.requestSteamId = function(callback) {
   })
   .then(data =>{
     steamUser.steamId = data;
+    localStorage.setItem("steamId", steamUser.steamId)
   })
-  .then(callback);
+  .then(callback)
 };
 
 //Maps total time played for each game and compares them to time of listed activities
@@ -64,6 +85,7 @@ steamUser.totalTimePlayed = () => {
   steamUser.pokemonShame = Math.round(steamUser.totalTime / 50);
   steamUser.codeFellowsShame = Number((steamUser.totalTime / 810).toFixed(2));
   steamUser.toHtml();
+
 };
 
 //Maps list of game names
