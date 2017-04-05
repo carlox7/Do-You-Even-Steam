@@ -13,6 +13,9 @@ steamUser.requestSteamData = function(callback){
   })
   .then(data => {
     steamUser.all = data;
+    steamUser.all.games.sort(function(a, b) {
+   return parseFloat(b.playtime_forever) - parseFloat(a.playtime_forever);
+});
   })
   .then(steamUser.totalTimePlayed);
 };
@@ -73,3 +76,4 @@ steamUser.gameNames = () => {
     return data.name;
   });
 };
+console.log(steamUser.all.games);
