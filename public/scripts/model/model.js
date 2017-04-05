@@ -20,9 +20,19 @@ steamUser.requestSteamData = function(callback){
 $('#steam-form').submit(function(event){
   event.preventDefault();
   event.stopPropagation();
+  if($.isNumeric($('#steam-form input').val()) && ($('#steam-form input').val().length == 17)){
+    console.log('success');
+    steamUser.steamId = $('#steam-form input').val()
+    steamUser.requestSteamData(steamUser.steamId);
+    statsController.init();
+  }
+
+  else {
+  console.log('fail');
   steamUser.vanityUrl = $('#steam-form input').val();
   steamUser.requestSteamId(steamUser.requestSteamData);
   statsController.init();
+}
 
 });
 
