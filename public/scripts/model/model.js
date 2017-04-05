@@ -12,7 +12,6 @@ steamUser.requestSteamData = function(callback){
     }
   })
   .then(data => {
-    console.log(data);
     steamUser.all = data;
   })
   .then(steamUser.totalTimePlayed);
@@ -27,7 +26,6 @@ $('#steam-form button').on('click', function(e){
 });
 
 steamUser.requestSteamId = function(callback) {
-  console.log(steamUser.vanityUrl);
   $.ajax({
     url: '/getid',
     method: 'GET',
@@ -36,13 +34,12 @@ steamUser.requestSteamId = function(callback) {
     }
   })
   .then(data =>{
-    console.log(data);
-   steamUser.steamId = data
- })
+    steamUser.steamId = data;
+  })
   .then(callback);
 };
 
-//Maps total time played for each game in minutes and sums up all values and divides by 60 to get hours played
+//Maps total time played for each game and compares them to time of listed activities
 steamUser.totalTimePlayed = () => {
   let totalMinutes = steamUser.all.games.map(function (data) {
     return data.playtime_forever;
@@ -57,22 +54,10 @@ steamUser.totalTimePlayed = () => {
   steamUser.toHtml();
 };
 
+//Maps list of game names
 steamUser.gameNames = () => {
   steamUser.all.games.map(function (data){
     console.log(data.name);
     return data.name;
   });
 };
-
-steamUser.shameWalk = () => {
-  Math.round(steamUser.totalTime / 3);
-  steamUser.toHtml();
-};
-
-steamUser.moneyShame = () => steamUser.totalTime * 13;
-
-steamUser.londonShame = () => Math.round(steamUser.totalTime / 9);
-
-steamUser.harryPotterShame = () => Math.round(steamUser.totalTime / 59);
-
-steamUser.pokemonShame = () => Math.round(steamUser.totalTime / 50);
