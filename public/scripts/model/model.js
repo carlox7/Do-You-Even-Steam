@@ -13,14 +13,17 @@ steamUser.requestSteamData = function(callback){
   })
   .then(data => {
     steamUser.all = data;
+
+    // this is the sort by playtime function;
     steamUser.all.games.sort(function(a, b) {
    return parseFloat(b.playtime_forever) - parseFloat(a.playtime_forever);
+
     });
-    steamUser.all.games.forEach(function(currentGame){
-      $('#top-games').append(currentGame.name);
-      $('#top-games').append(currentGame.playtime_forever);
+    steamUser.all.games.forEach(function(a){
+      console.log(steamUser.all.games.playtime_forever = a.playtime_forever / 60);
+      a.playtime_forever = Number((a.playtime_forever / 60).toFixed(2));
     });
-    })
+  })
   .then(steamUser.totalTimePlayed);
 };
 
@@ -28,14 +31,12 @@ $('#steam-form').submit(function(event){
   event.preventDefault();
   event.stopPropagation();
   if($.isNumeric($('#steam-form input').val()) && ($('#steam-form input').val().length == 17)){
-    console.log('success');
     steamUser.steamId = $('#steam-form input').val()
     steamUser.requestSteamData(steamUser.steamId);
     statsController.init();
   }
 
   else {
-  console.log('fail');
   steamUser.vanityUrl = $('#steam-form input').val();
   steamUser.requestSteamId(steamUser.requestSteamData);
   statsController.init();
@@ -60,10 +61,10 @@ steamUser.requestSteamId = function(callback) {
 
 //Maps total time played for each game and compares them to time of listed activities
 steamUser.totalTimePlayed = () => {
-  let totalMinutes = steamUser.all.games.map(function (data) {
+  let totalHours = steamUser.all.games.map(function (data) {
     return data.playtime_forever;
   }).reduce((acc, val) => acc + val);
-  steamUser.totalTime = Math.round(totalMinutes / 60);
+  steamUser.totalTime = totalHours
   steamUser.shameWalk = Math.round(steamUser.totalTime * 3);
   steamUser.moneyShame = steamUser.totalTime * 13;
   steamUser.londonShame = Math.round(steamUser.totalTime / 9);
@@ -71,13 +72,5 @@ steamUser.totalTimePlayed = () => {
   steamUser.pokemonShame = Math.round(steamUser.totalTime / 50);
   steamUser.codeFellowsShame = Number((steamUser.totalTime / 810).toFixed(2));
   steamUser.toHtml();
+  steamUser.gamesToHtml();
 };
-
-//Maps list of game names
-steamUser.gameNames = () => {
-  steamUser.all.games.map(function (data){
-    console.log(data.name);
-    return data.name;
-  });
-};
-console.log(steamUser.all.games);
