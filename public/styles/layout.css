@@ -29,13 +29,23 @@
   font-size: 1em;
 }
 
-#results-list{
+#results-list {
   color: white;
   list-style: none;
   font-size: 1.3em;
   width: 70%
   margin: 0 auto;
 
+}
+.top-games-header {
+  text-decoration: underline;
+}
+#top-games-template {
+  color: white;
+  list-style: none;
+  font-size: 1.3em;
+  width: 70%
+  margin: 0 auto;
 }
 
 #submit {
@@ -59,7 +69,7 @@
 	color:#ffffff;
 	font-family:'VT323', monospace;
 	font-size:20px;
-	padding:6px 24px;
+	padding:2px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #854629;
 }
@@ -75,7 +85,7 @@
 }
 #submit {
 	position:relative;
-	top:1px;
+	top:.5px;
 }
 
 

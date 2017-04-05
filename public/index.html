@@ -12,7 +12,7 @@
     <script src="https://use.fontawesome.com/d8ce3ea8be.js"></script>
 
     <script id="stats-template" type="text/x-handlebars-template">
-      <p id="total-time">This is your total number of hours: <span>{{totalTime}}</span></p>
+      <p id="results-header">This is your total number of hours:   <span>{{totalTime}}</span></p>
 
       <ul id="results-list">
         <li>In that amount of time you could have:</li>
@@ -27,8 +27,10 @@
 
     <script id="top-games-template" type="text/x-handlebars-template">
       <div class="game">
-        <p> Game Name : {{name}}</p>
-        <p> Total Time: {{playtime_forever}}</p>
+        <ul>
+        <li>Game Name : {{name}}</li>
+        <li>Total Time: <span>{{playtime_forever}}</span></li>
+      </ul>
       </div>
     </script>
 
@@ -58,7 +60,7 @@
     <section id="game-stats"></section>
 
     <section id="top-games">
-      <p>Your Top Played Games</p>
+      <p id="results-header" class="top-games-header">Your Top Played Games</p>
 
     </section>
 
@@ -101,7 +103,7 @@
     <script src="/scripts/controller/homeController.js" type="text/javascript"></script>
     <script src="/scripts/controller/aboutController.js" type="text/javascript"></script>
 
-    
+
     <script src="/scripts/controller/statsController.js" type="text/javascript"></script>
     <script src="/scripts/controller/topGamesController.js" type="text/javascript"></script>
 

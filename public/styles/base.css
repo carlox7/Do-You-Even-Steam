@@ -25,13 +25,13 @@ img {
 }
 footer {
   font-size: 1.2em;
-  margin: 0 auto;
+  margin-top: 1em;
   text-align: center;
   background-color: white;
 }
 
 form {
-  font-size: 2em;
+  font-size: 1em;
   width: 50%;
   margin: 0 auto;
   text-align: center;
