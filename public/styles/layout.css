@@ -78,6 +78,10 @@
 	top:1px;
 }
 
+#game-logo {
+  max-width: 250px;
+}
+
 
 span {
   font-family: 'VT323', monospace;
