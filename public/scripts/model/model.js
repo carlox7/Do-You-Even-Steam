@@ -15,8 +15,12 @@ steamUser.requestSteamData = function(callback){
     steamUser.all = data;
     steamUser.all.games.sort(function(a, b) {
    return parseFloat(b.playtime_forever) - parseFloat(a.playtime_forever);
-});
-  })
+    });
+    steamUser.all.games.forEach(function(currentGame){
+      $('#top-games').append(currentGame.name);
+      $('#top-games').append(currentGame.playtime_forever);
+    });
+    })
   .then(steamUser.totalTimePlayed);
 };
 
