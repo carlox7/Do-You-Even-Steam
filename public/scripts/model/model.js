@@ -26,6 +26,7 @@ $('#steam-form').submit(function(event){
 
 });
 
+
 steamUser.requestSteamId = function(callback) {
   $.ajax({
     url: '/getid',
