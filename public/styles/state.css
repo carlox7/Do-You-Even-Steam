@@ -8,16 +8,40 @@
     top: 35%;
     width: 100%
   }
+
+  form {
+    font-size: 1em;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Varela', sans-serif;
+  }
 }
 
 @media only screen and (min-width: 740px){
 
+  form {
+    font-size: 2em;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Varela', sans-serif;
+  }
+
+  #submit {
+    padding:9px 24px;
+    vertical-align: bottom;
+  }
+
   li {
+    color: white;
     font-size: 2em;
     font-family: 'Varela', sans-serif;
     padding-bottom: 15px;
     padding-left: 15px;
     font-weight: bold;
+    list-style: none;
+
   }
 
   #hamburger{
@@ -49,11 +73,11 @@
      left: 0;
      position:absolute;
      text-align:center;
-     top: 35%;
+     top: 40%;
      width: 100%;
    }
 
-   #total-time {
+   #results-header {
      width: 92%;
      margin: 0 auto;
      font-size: 3.3em;
