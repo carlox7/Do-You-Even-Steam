@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/state.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <script src="https://use.fontawesome.com/d8ce3ea8be.js"></script>
 
     <script id="stats-template" type="text/x-handlebars-template">
       <p>This is your total number of hours: {{totalTime}}</p>
-       In that amount of time you could have:
-      <ul>
+
+      <ul id="results-list">
+        In that amount of time you could have:
         <li>Walked {{shameWalk}} miles</li>
-        <li>Made $ {{moneyShame}} working minimum wage</li>
+        <li>Made ${{moneyShame}} working minimum wage</li>
         <li>Flown to London from Seattle {{londonShame}} times</li>
         <li>Read all seven Harry Potter books {{harryPotterShame}} times</li>
         <li>Beaten Pokemon Red {{pokemonShame}} times</li>
@@ -72,7 +74,8 @@
       </div>
     </section>
 
-    <footer>Superior Steamers
+    <footer>
+      Superior Steamers
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

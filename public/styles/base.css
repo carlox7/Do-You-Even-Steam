@@ -5,3 +5,24 @@ a {
 body {
   background-color: #808080;
 }
+
+h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+footer {
+  font-size: 1.2em;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+}
+
+li {
+  padding-bottom: 15px;
+}

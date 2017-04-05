@@ -12,9 +12,12 @@
 #submit{
   border: 4px;
   border-radius: 30px;
-  font-size: 2em;
+  font-size: 1em;
 }
 
-#hamburger{
-  float: right;
+#results-list{
+  color: white;
+  list-style: none;
+  font-size: 1.3em;
+
 }
