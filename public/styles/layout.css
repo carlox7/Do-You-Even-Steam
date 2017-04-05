@@ -2,8 +2,19 @@
   display: none;
   padding: 0;
   list-style: none;
+  font-size: 3em;
 }
 
 #main-nav:hover ul {
   display: block;
+}
+
+#submit{
+  border: 4px;
+  border-radius: 30px;
+  font-size: 2em;
+}
+
+#hamburger{
+  float: right;
 }

@@ -22,9 +22,9 @@ $('#steam-form button').on('click', function(event){
   event.stopPropagation();
   steamUser.vanityUrl = $('#steam-form input').val();
   steamUser.requestSteamId(steamUser.requestSteamData);
-
 });
 $('#steam-form input').keydown(function(event) { if (event.keyCode == '13') { event.preventDefault(); } });
+
 steamUser.requestSteamId = function(callback) {
   $.ajax({
     url: '/getid',
