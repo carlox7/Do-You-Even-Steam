@@ -30,6 +30,14 @@ footer {
   background-color: white;
 }
 
+form {
+  font-size: 2em;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Varela', sans-serif;
+}
+
 label {
   color: white;
 }
