@@ -23,7 +23,13 @@
         <li>Beaten Pokemon Red <span>{{pokemonShame}}</span> times</li>
         <li>You could finish all three Code Fellows course <span>{{codeFellowsShame}}</span> times.</li>
       </ul>
-      <!-- <p></p> -->
+    </script>
+
+    <script id="top-games-template" type="text/x-handlebars-template">
+      <div class="game">
+        <p> Game Name : {{name}}</p>
+        <p> Total Time: {{playtime_forever}}</p>
+      </div>
     </script>
 
   </head>
@@ -33,6 +39,7 @@
       <ul id="nav-list">
         <li><a href="/">Home</a></li>
         <li><a href="/stats">Stats</a></li>
+        <li><a href="/topgames">Top Games</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </header>
@@ -48,6 +55,11 @@
       </form>
     </section>
     <section id="game-stats"></section>
+
+    <section id="top-games">
+      <p>Your Top Played Games</p>
+
+    </section>
 
     <section id="about-us">
       <div class="about-each" id="patrick">
@@ -86,6 +98,7 @@
     <script src="/scripts/controller/homeController.js" type="text/javascript"></script>
     <script src="/scripts/controller/aboutController.js" type="text/javascript"></script>
     <script src="/scripts/controller/statsController.js" type="text/javascript"></script>
+    <script src="/scripts/controller/topGamesController.js" type="text/javascript"></script>
     <script src="/scripts/controller/pages.js" type="text/javascript"></script>
 
     </script>
