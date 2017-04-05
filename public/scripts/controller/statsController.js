@@ -7,6 +7,9 @@
     $('#about-us').hide();
     $('#home-page').hide();
     $('#top-games').hide();
+    $('#help-page').hide();
+    $('#banner').fadeIn();
+    $('#banner-title').fadeIn();
     $('#game-stats').fadeIn();
   }
   module.statsController = statsController;
