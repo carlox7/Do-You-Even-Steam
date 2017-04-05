@@ -22,6 +22,7 @@ $('#steam-form button').on('click', function(event){
   event.stopPropagation();
   steamUser.vanityUrl = $('#steam-form input').val();
   steamUser.requestSteamId(steamUser.requestSteamData);
+  statsController.init();
 
 });
 $('#steam-form input').keydown(function(event) { if (event.keyCode == '13') { event.preventDefault(); } });
@@ -45,7 +46,7 @@ steamUser.totalTimePlayed = () => {
     return data.playtime_forever;
   }).reduce((acc, val) => acc + val);
   steamUser.totalTime = Math.round(totalMinutes / 60);
-  steamUser.shameWalk = Math.round(steamUser.totalTime / 3);
+  steamUser.shameWalk = Math.round(steamUser.totalTime * 3);
   steamUser.moneyShame = steamUser.totalTime * 13;
   steamUser.londonShame = Math.round(steamUser.totalTime / 9);
   steamUser.harryPotterShame = Math.round(steamUser.totalTime / 59);
