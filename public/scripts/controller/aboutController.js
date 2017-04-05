@@ -6,6 +6,7 @@
   aboutController.init = function(){
     $('#game-stats').hide();
     $('#home-page').hide();
+    $('#top-games').hide();
     $('#about-us').fadeIn();
   }
   module.aboutController = aboutController;
