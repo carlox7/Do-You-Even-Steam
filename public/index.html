@@ -15,18 +15,22 @@
       <p id="total-time">This is your total number of hours: <span>{{totalTime}}</span></p>
 
       <ul id="results-list">
-        <li>In that amount of time you could have:</li>
-        <li>Walked <span>{{shameWalk}}</span> miles.</li>
-        <li>Made <span>${{moneyShame}}</span> working minimum wage.</li>
-        <li>Flown to London from Seattle <span>{{londonShame}}</span> times.</li>
-        <li>Read all seven Harry Potter books <span>{{harryPotterShame}}</span> times.</li>
-        <li>Beaten Pokemon Red <span>{{pokemonShame}}</span> times</li>
-        <li>You could finish all three Code Fellows course <span>{{codeFellowsShame}}</span> times.</li>
+        <li>In that amount of time you could have:</li><hr>
+        <li>Walked <span>{{shameWalk}}</span> miles.</li><hr>
+        <li>Made <span>${{moneyShame}}</span> working minimum wage.</li><hr>
+        <li>Flown to London from Seattle <span>{{londonShame}}</span> times.</li><hr>
+        <li>Read all seven Harry Potter books <span>{{harryPotterShame}}</span> times.</li><hr>
+        <li>Beaten Pokemon Red <span>{{pokemonShame}}</span> times</li><hr>
+        <li>You could have finished all three Code Fellows courses <span>{{codeFellowsShame}}</span> times.</li><hr>
+        <li>You could have watched the entire series Friends <span>{{friendsShame}}</span> times.</li><hr>
+        <li>According to Malcolm Gladwell's 10,000 hour theory, you're <span>{{tenKShame}}%</span> of the way to being an expert gamer</li><hr>
+        <li>While you were playing the International Space Station traveled <span>{{spaceShame}}</span> miles</li><hr>
       </ul>
     </script>
 
     <script id="top-games-template" type="text/x-handlebars-template">
       <div class="game">
+        <img id="game-logo" src="http://media.steampowered.com/steamcommunity/public/images/apps/{{appid}}/{{img_logo_url}}.jpg">
         <p> Game Name : {{name}}</p>
         <p> Total Time: {{playtime_forever}}</p>
       </div>
@@ -101,7 +105,7 @@
     <script src="/scripts/controller/homeController.js" type="text/javascript"></script>
     <script src="/scripts/controller/aboutController.js" type="text/javascript"></script>
 
-    
+
     <script src="/scripts/controller/statsController.js" type="text/javascript"></script>
     <script src="/scripts/controller/topGamesController.js" type="text/javascript"></script>
 
