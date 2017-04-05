@@ -17,7 +17,7 @@ steamUser.requestSteamData = function(callback){
   .then(steamUser.totalTimePlayed);
 };
 
-$('#steam-form button').on('click', function(event){
+$('#steam-form').submit(function(event){
   event.preventDefault();
   event.stopPropagation();
   steamUser.vanityUrl = $('#steam-form input').val();
@@ -25,7 +25,7 @@ $('#steam-form button').on('click', function(event){
   statsController.init();
 
 });
-$('#steam-form input').keydown(function(event) { if (event.keyCode == '13') { event.preventDefault(); } });
+
 steamUser.requestSteamId = function(callback) {
   $.ajax({
     url: '/getid',
