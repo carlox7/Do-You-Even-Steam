@@ -87,14 +87,17 @@ steamUser.requestSteamId = function(callback) {
 steamUser.totalTimePlayed = () => {
   let totalHours = steamUser.all.games.map(function (data) {
     return data.playtime_forever;
-  }).reduce((acc, val) => acc + val);
-  steamUser.totalTime = totalHours
-  steamUser.shameWalk = Math.round(steamUser.totalTime * 3);
-  steamUser.moneyShame = steamUser.totalTime * 13;
-  steamUser.londonShame = Math.round(steamUser.totalTime / 9);
-  steamUser.harryPotterShame = Math.round(steamUser.totalTime / 59);
-  steamUser.pokemonShame = Math.round(steamUser.totalTime / 50);
-  steamUser.codeFellowsShame = Number((steamUser.totalTime / 810).toFixed(2));
+  }).reduce((acc, val) => acc + val).toFixed(2);
+  steamUser.totalTime = totalHours;
+  steamUser.shameWalk = Number(steamUser.totalTime * 3).toFixed(2);
+  steamUser.moneyShame = Number(steamUser.totalTime * 13).toFixed(2);
+  steamUser.londonShame = Number(steamUser.totalTime / 9).toFixed(2);
+  steamUser.harryPotterShame = Number(steamUser.totalTime / 59).toFixed(2);
+  steamUser.pokemonShame = Number(steamUser.totalTime / 50).toFixed(2);
+  steamUser.codeFellowsShame = Number(steamUser.totalTime / 810).toFixed(2);
+  steamUser.friendsShame = Number(steamUser.totalTime / 83).toFixed(2)
+  steamUser.tenKShame = Number((steamUser.totalTime / 10000) * 100).toFixed(2);
+  steamUser.spaceShame = Number(steamUser.totalTime * 17150).toFixed(2);
   steamUser.toHtml();
   steamUser.gamesToHtml();
 
