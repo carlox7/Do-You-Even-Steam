@@ -1,15 +1,61 @@
-@media only screen and (min-width: 745px){
+@media only screen and (min-width : 414px) and (max-width : 736px) and (orientation : landscape) {
+  #banner-title {
+    font-size: 2em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    left: 0;
+    position:absolute;
+    text-align:center;
+    top: 35%;
+    width: 100%
+  }
+}
+
+@media only screen and (min-width: 740px){
+
+  li {
+    font-size: 2em;
+    font-family: 'Varela', sans-serif;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+  }
+
   #hamburger{
     display: none;
   }
 
   #main-nav ul{
+    width: 20%;
+    border: 0 auto;
+    font-size: 2em;
     display: block;
   }
 
   #main-nav ul li{
      display: inline;
      float: none;
-     font-size: 1em;
+     font-size: .75em;
+   }
+
+   #banner {
+     margin: 0 auto;
+     position: relative;
+     width: 80%;
+   }
+
+   #banner-title {
+     font-size: 3em;
+     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+     left: 0;
+     position:absolute;
+     text-align:center;
+     top: 35%;
+     width: 100%;
+   }
+
+   #total-time {
+     width: 92%;
+     margin: 0 auto;
+     font-size: 3.3em;
    }
 }
