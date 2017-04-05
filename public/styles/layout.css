@@ -9,6 +9,20 @@
   display: block;
 }
 
+#banner {
+  position: relative;
+}
+
+#banner-title {
+  font-size: 1.2em;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 15%;
+  width: 100%
+}
+
 #submit{
   border: 4px;
   border-radius: 30px;
@@ -19,5 +33,17 @@
   color: white;
   list-style: none;
   font-size: 1.3em;
+  width: 70%
+  margin: 0 auto;
+
+
+}
+
+span {
+  font-family: 'VT323', monospace;
+  color: #FF0000;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: underline;
 
 }

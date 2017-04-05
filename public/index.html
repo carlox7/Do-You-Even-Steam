@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/state.css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|VT323|Varela" rel="stylesheet">
     <script src="https://use.fontawesome.com/d8ce3ea8be.js"></script>
 
     <script id="stats-template" type="text/x-handlebars-template">
-      <p>This is your total number of hours: {{totalTime}}</p>
+      <p id="total-time">This is your total number of hours: <span>{{totalTime}}</span></p>
 
       <ul id="results-list">
-        In that amount of time you could have:
-        <li>Walked {{shameWalk}} miles</li>
-        <li>Made ${{moneyShame}} working minimum wage</li>
-        <li>Flown to London from Seattle {{londonShame}} times</li>
-        <li>Read all seven Harry Potter books {{harryPotterShame}} times</li>
-        <li>Beaten Pokemon Red {{pokemonShame}} times</li>
-        <li>You can finish all three Code Fellows course {{codeFellowsShame}} times</li>
+        <li>In that amount of time you could have:</li>
+        <li>Walked <span>{{shameWalk}}</span> miles.</li>
+        <li>Made <span>${{moneyShame}}</span> working minimum wage.</li>
+        <li>Flown to London from Seattle <span>{{londonShame}}</span> times.</li>
+        <li>Read all seven Harry Potter books <span>{{harryPotterShame}}</span> times.</li>
+        <li>Beaten Pokemon Red <span>{{pokemonShame}}</span> times</li>
+        <li>You could finish all three Code Fellows course <span>{{codeFellowsShame}}</span> times.</li>
       </ul>
       <!-- <p></p> -->
     </script>
@@ -37,8 +37,8 @@
       </ul>
     </header>
 
-
-    <h1>Do You Even Steam?</h1>
+    <div id="banner"><img src="/images/steambanner.png" alt=""></div>
+    <div id="banner-title"><h1>Do You Even Steam?</h1></div>
 
     <section id="home-page">
       <form id="steam-form">
@@ -47,9 +47,7 @@
 
       </form>
     </section>
-    <section id="game-stats">
-      <p>Stats</p>
-    </section>
+    <section id="game-stats"></section>
 
     <section id="about-us">
       <div class="about-each" id="patrick">
