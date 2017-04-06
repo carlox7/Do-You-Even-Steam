@@ -12,7 +12,7 @@
     <script src="https://use.fontawesome.com/d8ce3ea8be.js"></script>
 
     <script id="stats-template" type="text/x-handlebars-template">
-      <p id="results-header">This is your total number of hours:   <span>{{totalTime}}</span></p>
+      <p id="results-header">The total amount of hours you've played:   <span>{{totalTime}}</span></p>
 
       <ul id="results-list">
         <li>In that amount of time you could have:</li><hr>
@@ -32,9 +32,9 @@
       <div class="game">
 
        <ul>
+        <li>{{name}}</li>
         <li><img id="game-logo" src="http://media.steampowered.com/steamcommunity/public/images/apps/{{appid}}/{{img_logo_url}}.jpg"></li>
-        <li>Game Name : {{name}}</li>
-        <li>Total Time: <span>{{playtime_forever}}</span></li>
+        <li>Total Time: <span>{{playtime_forever}}</span> hours</li>
       </ul>
       </div>
     </script>
