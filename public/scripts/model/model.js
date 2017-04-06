@@ -121,8 +121,6 @@ steamUser.totalTimePlayed = () => {
 
 
 steamUser.insertRecord = function(callback) {
-  console.log(steamUser.vanityUrl);
-  console.log(steamUser.totalTime);
     $.ajax({
       url : '/leaderboard',
       method: 'POST',
@@ -131,4 +129,24 @@ steamUser.insertRecord = function(callback) {
         time: steamUser.totalTime
       }
   });
+}
+
+steamUser.getTable = function() {
+  $.ajax({
+    url: '/leaderboard',
+    method: 'GET'
+  })
+  .then(results => {
+        var names = [];
+        var times = [];
+        results.forEach(function(a){
+          if(!names.includes(a.name)){
+            names.push(a.name)
+            times.push(a.time)
+          }
+          console.log(names);
+          console.log(times);
+          
+        })
+      })
 }
