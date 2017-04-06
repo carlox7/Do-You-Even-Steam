@@ -21,7 +21,7 @@ steamUser.requestSteamData = function(callback){
 
     });
     steamUser.all.games.forEach(function(a){
-      console.log(steamUser.all.games.playtime_forever = a.playtime_forever / 60);
+      // console.log(steamUser.all.games.playtime_forever = a.playtime_forever / 60);
       a.playtime_forever = Number((a.playtime_forever / 60).toFixed(2));
     });
   })
@@ -36,17 +36,33 @@ steamUser.requestSteamData = function(callback){
 };
 
 
-steamUser.showStatsPage = function(){
-  if (localStorage.steamId){
-    steamUser.steamId = localStorage.steamId;
-    steamUser.requestSteamData();
-    statsController.init();
-  }
-}
-steamUser.showStatsPage();
-
-
-
+// steamUser.showStatsPage = function(){
+//
+// let urlArray = window.location.href.split('/');
+//
+// if(urlArray[urlArray.length -1] === 'about'){
+//     aboutController.init();
+//   }
+//   else if(urlArray[urlArray.length -1] === 'topgames'){
+//     if (localStorage.steamId){
+//       steamUser.steamId = localStorage.steamId;
+//       steamUser.requestSteamData();
+//       topGamesController.init();
+//     }
+//   }
+//   else if(urlArray[urlArray.length -1] === 'stats'){
+//     statsController.init();
+//   }
+//   else if(urlArray[urlArray.length -1] === 'home'){
+//     homeController.init();
+//   }
+//   else if(urlArray[urlArray.length -1] === 'help'){
+//     helpController.init();
+//   }
+//   else{
+//     homeController.init();
+//   }
+// }
 
 $('#steam-form').submit(function(event){
   event.preventDefault();
