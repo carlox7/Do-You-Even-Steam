@@ -30,6 +30,8 @@ app.get('/games', function(req,res){
   });
 });
 
+app.get('/*', (request, response) => response.sendFile('public/index.html', {root: '.'}));
+
 app.listen(PORT, function () {
   console.log(`Your app is being served on localhost: ${PORT}`);
 });

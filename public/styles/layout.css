@@ -1,13 +1,10 @@
 #main-nav ul {
   display: none;
-  padding: 0;
-  list-style: none;
-  font-size: 3em;
 }
 
-#main-nav:hover ul {
+/*#main-nav:hover ul {
   display: block;
-}
+}*/
 
 #banner {
   position: relative;
@@ -21,6 +18,14 @@
   text-align:center;
   top: 21%;
   width: 100%
+}
+footer {
+  position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
 }
 
 #submit{
@@ -40,6 +45,19 @@
 .top-games-header {
   text-decoration: underline;
 }
+
+#home-page {
+ width:500px;
+ height:500px;*/
+ margin:0 auto;
+ position:absolute;
+ left:50%;
+ top:50%;
+ margin-left:-250px;
+ margin-top:-250px;
+}
+
+
 #top-games-template {
   color: white;
   list-style: none;
@@ -92,7 +110,6 @@
   max-width: 250px;
 }
 
-
 span {
   font-family: 'VT323', monospace;
   color: #FF0000;
@@ -102,6 +119,63 @@ span {
 }
 
 #about-us {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#about-us img {
   width: 25%;
   height: auto;
+}
+
+
+nav {
+ margin: 0 auto;
+}
+
+#nav-list {
+ margin: 0 auto;
+ overflow: auto;
+ list-style-type: none;
+ text-align: center;
+}
+
+#nav-list li {
+ height: 25px;
+ float: left;
+ margin-right: 0px;
+ border-right: 1px solid #aaa;
+ padding: 0 20px;
+ text-align: center;
+}
+
+#nav-list li:last-child {
+ border-right: none;
+}
+
+#nav-list li a {
+ text-decoration: none;
+ color: #ccc;
+ font: 25px/1 Helvetica, Verdana, sans-serif;
+ text-transform: uppercase;
+ -webkit-transition: all 0.5s ease;
+}
+
+#nav-list li a:hover {
+ color: #666;
+}
+
+#nav-list li.active a {
+ font-weight: bold;
+ color: #333;
+}
+
+#top-games {
+  text-align: center;
+}
+
+#do-you-steam {
+  float: right;
+  margin-right: 15px;
+  font-family: 'Permanent Marker', cursive !important;
 }
