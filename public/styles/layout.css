@@ -99,5 +99,9 @@ span {
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: underline;
+}
 
+#about-us {
+  width: 25%;
+  height: auto;
 }

@@ -48,18 +48,13 @@
     display: none;
   }
 
-  #main-nav ul{
+  #main-nav ul {
     width: 20%;
     border: 0 auto;
-    font-size: 2em;
-    display: block;
+    font-size: 1.5em;
+    display: inline;
+    text-align: center;
   }
-
-  #main-nav ul li{
-     display: inline;
-     float: none;
-     font-size: .75em;
-   }
 
    #banner {
      margin: 0 auto;
