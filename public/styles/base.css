@@ -13,7 +13,7 @@ body {
 section {
   background-color: grey;
   background: rgb(54, 25, 25);
-  background: rgba(54, 50, 50, .7);
+  background: rgba(54, 50, 50, .8);
 }
 
 h1 {
@@ -25,9 +25,11 @@ h1 {
 
 h2 {
   color: white;
+  font-size: 45px;
   text-align: center;
   font-family: 'Permanent Marker', cursive;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin: 0 25px 0 0;
 }
 
 h3{
@@ -41,7 +43,7 @@ h3{
 
 p {
   color: white;
-  font-size: 1.3em;
+  font-size: 1em;
   font-family: 'Varela', sans-serif;
   font-weight: bold;
 }
@@ -76,5 +78,5 @@ li {
 }
 
 h3 a{
-  color: red;
+  color: yellow;
 }
