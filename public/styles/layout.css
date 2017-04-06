@@ -39,8 +39,6 @@ footer {
   list-style: none;
   font-size: 1.3em;
   width: 70%
-  margin: 0 auto;
-
 }
 .top-games-header {
   text-decoration: underline;
@@ -63,7 +61,6 @@ footer {
   list-style: none;
   font-size: 1.3em;
   width: 70%
-  margin: 0 auto;
 }
 
 #submit {
@@ -112,7 +109,8 @@ footer {
 
 span {
   font-family: 'VT323', monospace;
-  color: #FF0000;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: yellow;
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: underline;
@@ -141,7 +139,7 @@ nav {
 }
 
 #nav-list li {
- height: 25px;
+ height: 30px;
  float: left;
  margin-right: 0px;
  border-right: 1px solid #aaa;
@@ -177,5 +175,10 @@ nav {
 #do-you-steam {
   float: right;
   margin-right: 15px;
-  font-family: 'Permanent Marker', cursive !important;
+  font-family: 'VT323', monospace;
+}
+
+.about-each p {
+  font-size: 24px;
+  color: yellow;
 }
