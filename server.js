@@ -15,7 +15,7 @@ app.get('/getid', function(req,res){
 });
 
 app.get('/games', function(req,res){
-  request.get(`https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.KEY}&steamid=${req.headers.steamid}&format=json&include_appinfo=1`)
+  request.get(`https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.KEY}&steamid=${req.headers.steamid}&format=json&include_played_free_games=1&include_appinfo=1`)
   .end((err,response) => {
     res.send(response.body.response);
   });
