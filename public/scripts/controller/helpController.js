@@ -8,8 +8,7 @@
     $('#home-page').hide();
     $('#top-games').hide();
     $('#about-us').hide();
-    $('#banner').hide();
-    $('#banner-title').hide();
+    $('#leaderboard').hide();
     $('#help-page').fadeIn();
   }
   module.helpController = helpController;

@@ -8,8 +8,8 @@
     $('#home-page').hide();
     $('#top-games').hide();
     $('#help-page').hide();
-    $('#banner').fadeIn();
-    $('#banner-title').fadeIn();
+    $('#leaderboard').hide();
+    $('#help-page').hide()
     $('#game-stats').fadeIn();
   }
   module.statsController = statsController;
