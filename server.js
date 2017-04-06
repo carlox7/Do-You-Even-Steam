@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-const conString = process.env.DATABASE_URL || 'postgres://localhost:5432';
+const conString = process.env.DATABASE_URL || 'postgres://patrick:test@localhost:5432/kilovolt';
 const client = new pg.Client(conString);
 
 client.connect();
@@ -30,13 +30,19 @@ app.get('/games', function(req,res){
   });
 });
 
-app.get('/*', (request, response) => response.sendFile('public/index.html', {root: '.'}));
 
 app.listen(PORT, function () {
   console.log(`Your app is being served on localhost: ${PORT}`);
 });
 
 loadDB();
+
+app.get('/leaderboard', (request, response) =>{
+  client.query(`
+    SELECT * FROM leaderboard
+    `)
+    .then(result => response.send(result.rows))
+})
 
 app.post('/leaderboard', (request, response) =>{
   client.query(`
@@ -64,3 +70,5 @@ function loadDB(){
     }
   );
 }
+
+app.get('/*', (request, response) => response.sendFile('public/index.html', {root: '.'}));
