@@ -14,7 +14,7 @@
     <script id="stats-template" type="text/x-handlebars-template">
       <p id="results-header">The total amount of hours you've played:   <span>{{totalTime}}</span></p>
 
-      <ul id="results-list">
+      <ul class="game" id="results-list">
         <li>In that amount of time you could have:</li><hr>
         <li>Walked <span>{{shameWalk}}</span> miles.</li><hr>
         <li>Made <span>${{moneyShame}}</span> working minimum wage.</li><hr>
@@ -30,38 +30,40 @@
 
     <script id="top-games-template" type="text/x-handlebars-template">
       <div class="game">
-
        <ul>
         <li>{{name}}</li>
         <li><img id="game-logo" src="http://media.steampowered.com/steamcommunity/public/images/apps/{{appid}}/{{img_logo_url}}.jpg"></li>
-        <li>Total Time: <span>{{playtime_forever}}</span> hours</li>
+        <li><span>{{playtime_forever}}</span> hours</li><hr>
       </ul>
       </div>
     </script>
 
   </head>
   <body>
-    <header id="main-nav">
+    <nav id="main-nav">
       <i class="fa fa-bars fa-3x" aria-hidden="true" id="hamburger"></i>
       <ul id="nav-list">
         <li><a href="/">Home</a></li>
         <li><a href="/stats">Stats</a></li>
-        <li><a href="/topgames">Top Games</a></li>
+        <li><a href="/topgames">Your Top Games</a></li>
         <li><a href="/about">About</a></li>
       </ul>
-    </header>
+      <div id="do-you-steam">
+        <p>Do you even steam?</p>
+      </div>
+    </nav>
 
-    <div id="banner"><img src="/images/steambanner2.png" alt=""></div>
-    <div id="banner-title"><h1>Do You Even Steam?</h1></div>
+    <!-- <div id="banner"><img src="/images/steambanner2.png" alt=""></div> -->
+    <!-- <div id="banner-title"><h1>Do You Even Steam?</h1></div> -->
 
     <section id="home-page">
-
       <form id="steam-form">
         <label>Enter Steam ID<input type="text" placeholder="Here" required="true"></label>
         <input id="submit" type="submit" name="button"></input>
-        <h2>Enter your Steam name below. <a href="/help">Click here to learn where to find that</a></h2>
+        <h3>Not sure of your ID? <a href="/help">Click here to learn where to find it</a></h3>
       </form>
     </section>
+
     <section id="game-stats"></section>
 
     <section id="top-games">
@@ -81,8 +83,10 @@
         <p>This project is consuming our souls</p>
       </div>
       <div class="about-each" id="carlos">
-        <h2>Carlos</h2>
-        <img id="about-pic" src="/images/carlos.jpeg">
+        <div class="inner-about">
+          <h2>Carlos</h2>
+          <img id="about-pic" src="/images/carlos.jpeg">
+        </div>
         <p>Save us.</p>
       </div>
       <div class="about-each" id="carlo">
@@ -92,7 +96,7 @@
       </div>
       <div class="about-each" id="michael">
         <h2>Michael</h2>
-        <img id="about-pic" src="#">
+        <img id="about-pic" src="/images/Selection_011.png">
         <p>Now is the winter of our discontent.</p>
       </div>
     </section>

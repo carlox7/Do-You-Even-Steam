@@ -33,7 +33,7 @@
     vertical-align: bottom;
   }
 
-  li {
+  .game li {
     color: white;
     font-size: 2em;
     font-family: 'Varela', sans-serif;
@@ -48,13 +48,12 @@
     display: none;
   }
 
-  #main-nav ul {
-    width: 20%;
+  /*#main-nav ul {
     border: 0 auto;
     font-size: 1.5em;
     display: inline;
-    text-align: center;
-  }
+
+  }*/
 
    #banner {
      margin: 0 auto;
@@ -76,5 +75,10 @@
      width: 92%;
      margin: 0 auto;
      font-size: 3.3em;
+   }
+   #main-nav ul {
+     display: inline-block;
+     margin-top: 20px;
+
    }
 }

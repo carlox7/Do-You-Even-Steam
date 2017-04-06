@@ -3,7 +3,17 @@ a {
 }
 
 body {
-  background-color: #292E37;
+  background-image: url("/images/steambanner2.png");
+  background-color: grey;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+section {
+  background-color: grey;
+  background: rgb(54, 25, 25);
+  background: rgba(54, 50, 50, .5);
 }
 
 h1 {
@@ -15,7 +25,17 @@ h1 {
 
 h2 {
   color: white;
+  text-align: center;
   font-family: 'Permanent Marker', cursive;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h3{
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /*font-family: 'Permanent Marker', cursive;*/
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -55,11 +75,6 @@ li {
   font-weight: bold;
 }
 
-h2{
-  color:white;
-  text-align: center;
-}
-
-h2 a{
+h3 a{
   color: red;
 }
