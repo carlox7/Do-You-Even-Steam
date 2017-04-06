@@ -48,7 +48,7 @@
     display: none;
   }
 
-  #main-nav ul, li{
+  #main-nav ul {
     width: 20%;
     border: 0 auto;
     font-size: 1.5em;
