@@ -2,6 +2,7 @@
 
 const steamUser = {};
 steamUser.all = [];
+steamUser.vanityUrl;
 
 
 steamUser.requestSteamData = function(callback){
@@ -21,7 +22,6 @@ steamUser.requestSteamData = function(callback){
 
     });
     steamUser.all.games.forEach(function(a){
-      // console.log(steamUser.all.games.playtime_forever = a.playtime_forever / 60);
       a.playtime_forever = Number((a.playtime_forever / 60).toFixed(2));
     });
   })
@@ -118,3 +118,17 @@ steamUser.totalTimePlayed = () => {
   steamUser.gamesToHtml();
 
 };
+
+
+steamUser.insertRecord = function(callback) {
+  console.log(steamUser.vanityUrl);
+  console.log(steamUser.totalTime);
+    $.ajax({
+      url : '/leaderboard',
+      method: 'POST',
+      headers:{
+        name: steamUser.vanityUrl,
+        time: steamUser.totalTime
+      }
+  });
+}

@@ -4,7 +4,9 @@
   "description": "Code 301 final project",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "pg": "^6.1.5",
     "superagent": "^3.5.2"
   },
   "devDependencies": {},
