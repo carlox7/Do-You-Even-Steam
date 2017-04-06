@@ -5,7 +5,7 @@
     left: 0;
     position:absolute;
     text-align:center;
-    top: 35%;
+    top: 50%;
     width: 100%
   }
 
@@ -68,12 +68,12 @@
    }
 
    #banner-title {
-     font-size: 3em;
+     font-size: 3.3em;
      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
      left: 0;
      position:absolute;
      text-align:center;
-     top: 40%;
+     top: 55%;
      width: 100%;
    }
 
