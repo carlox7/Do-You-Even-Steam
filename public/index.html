@@ -41,8 +41,9 @@
     </script>
 
     <script id="leaderboard-template" type="text/x-handlebars-template">
-      <ul>The Superior Steamers
-        <li>{{}}</li>
+      <ul>
+        <li>{{name}} {{time}}</li>
+      </ul>
     </script>
 
   </head>
@@ -53,7 +54,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/stats">Stats</a></li>
         <li><a href="/topgames">Top Games</a></li>
-        <li><a href="/leaderboard">Leaderboard</a></li>
+        <!-- <li><a href="/leaderboard">Leaderboard</a></li> -->
         <li><a href="/about">About</a></li>
       </ul>
       <div id="do-you-steam">
@@ -69,6 +70,8 @@
         <label>Enter Steam ID<input type="text" placeholder="Here" required="true"></label>
         <input id="submit" type="submit" name="button"></input>
         <h3>Not sure of your ID? <a href="/help">Click here to learn where to find it</a></h3>
+        <p id="mission">Ever wondered how many hours you have spent gaming on Steam. Enter your Steam Id in the form above to find out.</p>
+
       </form>
     </section>
 
@@ -85,6 +88,7 @@
     </section>
 
     <section id="leaderboard">
+      <h3>Superior Steamers</h3>
 
     </section>
 

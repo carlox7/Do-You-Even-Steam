@@ -12,7 +12,14 @@ steamUser.gamesToHtml = function (){
   $('#top-games').empty();
   let gamesArray = steamUser.all.games;
     gamesArray.forEach(function(a){
-
     $('#top-games').append(template(a));
   });
 };
+steamUser.leaderboard = function(){
+  let template = Handlebars.compile($('#leaderboard-template').text());
+  $('#leaderboard').empty();
+  let scoresArray = leaderboard.scores;
+  scoresArray.forEach(function(a){
+    $('#leaderboard').append(template(a));
+  })
+}
