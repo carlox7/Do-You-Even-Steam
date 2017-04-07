@@ -11,7 +11,7 @@ steamUser.gamesToHtml = function (){
   let template = Handlebars.compile($('#top-games-template').text());
   $('#top-games').empty();
   let gamesArray = steamUser.all.games;
-    gamesArray.forEach(function(a){
+  gamesArray.forEach(function(a){
     $('#top-games').append(template(a));
   });
 };
@@ -20,6 +20,8 @@ steamUser.leaderboard = function(){
   $('#leaderboard-list').empty();
   let scoresArray = leaderboard.scores;
   scoresArray.forEach(function(a){
+
     $('#leaderboard-list').append(template(a));
   })
 }
+

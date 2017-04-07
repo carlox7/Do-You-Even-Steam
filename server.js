@@ -9,6 +9,7 @@ const app = express();
 
 
 const conString = process.env.DATABASE_URL || 'postgres://michaelltreat:test@localhost:5432/kilovolt';
+
 const client = new pg.Client(conString);
 
 client.connect();
@@ -31,7 +32,6 @@ app.get('/games', function(req,res){
   });
 });
 
-
 app.listen(PORT, function () {
   console.log(`Your app is being served on localhost: ${PORT}`);
 });
@@ -42,8 +42,8 @@ app.get('/leaderboard', (request, response) =>{
   client.query(`
     SELECT * FROM leaderboard
     `)
-    .then(result => response.send(result.rows))
-})
+    .then(result => response.send(result.rows));
+});
 
 app.post('/leaderboard', (request, response) =>{
   client.query(`
@@ -53,8 +53,7 @@ app.post('/leaderboard', (request, response) =>{
   )
   .then(() => response.send('Insert complete'))
   .catch(console.error);
-})
-
+});
 
 function loadDB(){
   client.query(`
