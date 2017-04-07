@@ -11,6 +11,7 @@
     $('#game-stats').hide();
     $('#help-page').hide()
     $('#leaderboard').fadeIn();
+    steamUser.getTable();
   }
   module.leaderboardController = leaderboardController;
 })(window)

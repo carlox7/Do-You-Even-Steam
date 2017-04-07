@@ -1,8 +1,11 @@
 'use strict';
 
 const steamUser = {};
+const leaderboard = {};
+
 steamUser.all = [];
 steamUser.vanityUrl;
+leaderboard.scores = [];
 
 
 steamUser.requestSteamData = function(callback){
@@ -35,34 +38,6 @@ steamUser.requestSteamData = function(callback){
   });
 };
 
-
-// steamUser.showStatsPage = function(){
-//
-// let urlArray = window.location.href.split('/');
-//
-// if(urlArray[urlArray.length -1] === 'about'){
-//     aboutController.init();
-//   }
-//   else if(urlArray[urlArray.length -1] === 'topgames'){
-//     if (localStorage.steamId){
-//       steamUser.steamId = localStorage.steamId;
-//       steamUser.requestSteamData();
-//       topGamesController.init();
-//     }
-//   }
-//   else if(urlArray[urlArray.length -1] === 'stats'){
-//     statsController.init();
-//   }
-//   else if(urlArray[urlArray.length -1] === 'home'){
-//     homeController.init();
-//   }
-//   else if(urlArray[urlArray.length -1] === 'help'){
-//     helpController.init();
-//   }
-//   else{
-//     homeController.init();
-//   }
-// }
 
 $('#steam-form').submit(function(event){
   event.preventDefault();
@@ -131,22 +106,25 @@ steamUser.insertRecord = function(callback) {
   });
 }
 
-steamUser.getTable = function() {
+steamUser.getTable = function(classback) {
   $.ajax({
     url: '/leaderboard',
     method: 'GET'
   })
   .then(results => {
-        var names = [];
-        var times = [];
-        results.forEach(function(a){
-          if(!names.includes(a.name)){
-            names.push(a.name)
-            times.push(a.time)
-          }
-          console.log(names);
-          console.log(times);
-          
-        })
-      })
+    function Score(name,time){
+      this.name = name;
+      this.time = time;
+    };
+    var names = [];
+    results.forEach(function(a){
+      if(!names.includes(a.name)){
+        names.push(a.name);
+        leaderboard.scores.push(new Score(a.name,a.time));
+      }
+      leaderboard.scores.sort(function(a, b) {
+      return parseFloat(b.time) - parseFloat(a.time);
+      });
+    })
+  }).then(steamUser.leaderboard)
 }
