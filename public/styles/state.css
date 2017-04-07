@@ -121,4 +121,9 @@
     margin-left:-250px;
     margin-top:-250px;
    }
+
+   #sup-steam{
+     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     font-size: 8em;
+   }
 }

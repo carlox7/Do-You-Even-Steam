@@ -1,7 +1,7 @@
 'use strict';
 
-const steamUser = {};
-const leaderboard = {};
+var steamUser = {};
+var leaderboard = {};
 
 steamUser.all = [];
 steamUser.vanityUrl;
@@ -37,7 +37,7 @@ steamUser.requestSteamData = function(callback){
 
 };
 
-$('#steam-form').submit(function(event){
+$('#submit').on('click', function(event){
   event.preventDefault();
   event.stopPropagation();
   if($.isNumeric($('#steam-form input').val()) && ($('#steam-form input').val().length == 17)){
