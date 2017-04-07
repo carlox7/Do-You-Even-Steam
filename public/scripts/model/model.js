@@ -31,13 +31,7 @@ steamUser.requestSteamData = function(callback){
   .then(() => {
     steamUser.totalTimePlayed();
   })
-  .then(()=>{
-    if (localStorage.steamId){
-      statsController.init();
-    }
-  });
 };
-
 
 $('#steam-form').submit(function(event){
   event.preventDefault();
@@ -53,11 +47,15 @@ $('#steam-form').submit(function(event){
   steamUser.vanityUrl = $('#steam-form input').val();
   steamUser.requestSteamId(steamUser.requestSteamData);
   statsController.init();
-}
-
-
+  }
 });
 
+steamUser.showStatsPage = function(){
+  if (localStorage.steamId){
+    steamUser.steamId = localStorage.steamId;
+    steamUser.requestSteamData();
+  }
+}
 
 steamUser.requestSteamId = function(callback) {
   $.ajax({
@@ -128,3 +126,5 @@ steamUser.getTable = function(classback) {
     })
   }).then(steamUser.leaderboard)
 }
+
+steamUser.showStatsPage();
