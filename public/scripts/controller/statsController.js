@@ -9,8 +9,8 @@
     $('#top-games').hide();
     $('#help-page').hide();
     $('#leaderboard').hide();
-    $('#help-page').hide()
+    $('#help-page').hide();
     $('#game-stats').fadeIn();
-  }
+  };
   module.statsController = statsController;
-})(window)
+})(window);
