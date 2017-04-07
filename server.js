@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+
 const conString = process.env.DATABASE_URL || 'postgres://localhost:5432';
 const client = new pg.Client(conString);
 
@@ -62,9 +63,6 @@ function loadDB(){
       name VARCHAR(255),
       time VARCHAR(255)
     )`)
-    // .then(function(){
-    //   loadSteamer();
-    // })
     .catch(function(err){
       console.log(err);
     }
