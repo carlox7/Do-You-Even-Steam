@@ -16,6 +16,15 @@
     text-align: center;
     font-family: 'Varela', sans-serif;
   }
+
+  h2 {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0 25px 0 0;
+  }
 }
 
 @media only screen and (min-width: 740px){
@@ -48,13 +57,6 @@
     display: none;
   }
 
-  /*#main-nav ul {
-    border: 0 auto;
-    font-size: 1.5em;
-    display: inline;
-
-  }*/
-
    #banner {
      margin: 0 auto;
      position: relative;
@@ -80,5 +82,46 @@
      display: inline-block;
      margin-top: 20px;
 
+   }
+
+   #nav-list li {
+    height: 30px;
+    padding: 0 20px;
+   }
+
+   #nav-list li:last-child {
+    border-right: none;
+   }
+
+   #nav-list li a {
+    text-decoration: none;
+    color: #ccc;
+    font: 20px/1 Helvetica, Verdana, sans-serif;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s ease;
+   }
+
+   #nav-list li a:hover {
+    color: #666;
+   }
+
+   #nav-list li.active a {
+    font-weight: bold;
+    color: #333;
+   }
+
+   h2 {
+     font-size: 45px;
+   }
+
+   #home-page {
+    width:500px;
+    height:500px;*/
+    margin:0 auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-250px;
+    margin-top:-250px;
    }
 }

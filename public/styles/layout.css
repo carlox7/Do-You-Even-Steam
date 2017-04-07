@@ -1,10 +1,3 @@
-#main-nav ul {
-  display: none;
-}
-
-/*#main-nav:hover ul {
-  display: block;
-}*/
 
 #banner {
   position: relative;
@@ -45,14 +38,11 @@ footer {
 }
 
 #home-page {
- width:500px;
- height:500px;*/
+ width:100%;
+ height: 100%;
  margin:0 auto;
- position:absolute;
- left:50%;
- top:50%;
- margin-left:-250px;
- margin-top:-250px;
+ margin-top: 10%;
+ text-align: center;
 }
 
 
@@ -113,7 +103,6 @@ span {
   color: yellow;
   font-size: 1.5em;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 #about-us {
@@ -133,17 +122,18 @@ nav {
 
 #nav-list {
  margin: 0 auto;
+ margin-left: -20px;
  overflow: auto;
  list-style-type: none;
  text-align: center;
 }
 
 #nav-list li {
- height: 30px;
+ height: 20px;
  float: left;
  margin-right: 0px;
  border-right: 1px solid #aaa;
- padding: 0 20px;
+ padding: 0 10px;
  text-align: center;
 }
 
@@ -154,7 +144,7 @@ nav {
 #nav-list li a {
  text-decoration: none;
  color: #ccc;
- font: 25px/1 Helvetica, Verdana, sans-serif;
+ font: 11px/1 Helvetica, Verdana, sans-serif;
  text-transform: uppercase;
  -webkit-transition: all 0.5s ease;
 }
