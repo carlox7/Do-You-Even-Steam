@@ -53,10 +53,6 @@
 
   }
 
-  #hamburger{
-    display: none;
-  }
-
    #banner {
      margin: 0 auto;
      position: relative;
@@ -78,6 +74,7 @@
      margin: 0 auto;
      font-size: 2.2em;
    }
+
    #main-nav ul {
      display: inline-block;
      margin-top: 20px;

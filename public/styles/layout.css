@@ -172,7 +172,12 @@ nav {
   font-size: 24px;
   color: yellow;
 }
-
-#mission{
-  margin-top: .5em;
+.game li {
+  color: white;
+  font-size: 1.3em;
+  font-family: 'Varela', sans-serif;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+  list-style: none;
 }
