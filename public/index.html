@@ -12,9 +12,11 @@
     <script src="https://use.fontawesome.com/d8ce3ea8be.js"></script>
 
     <script id="stats-template" type="text/x-handlebars-template">
-      <p id="results-header">Your total hours played:   <span>{{totalTime}}</span></p>
+      <!-- <p id="results-header">Your total hours played:   <span>{{totalTime}}</span></p> -->
 
       <ul class="game" id="results-list">
+        <li>Your total hours played:   <span>{{totalTime}}</span></li>
+        <li></li>
         <li>In that amount of time you could have:</li><hr>
         <li>Walked <span>{{shameWalk}}</span> miles.</li><hr>
         <li>Made <span>${{moneyShame}}</span> working minimum wage.</li><hr>
