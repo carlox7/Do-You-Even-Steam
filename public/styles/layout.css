@@ -181,3 +181,19 @@ nav {
   font-weight: bold;
   list-style: none;
 }
+
+#leaderboard-list{
+  margin-left: 5em;
+  margin-top: 5em;
+}
+
+#leaderboard-list li{
+  list-style: inherit;
+  color: white;
+  font-size: 2.5em;
+}
+
+#sup-steam{
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 8em;
+}
