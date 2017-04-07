@@ -10,6 +10,6 @@
     $('#about-us').hide();
     $('#leaderboard').hide();
     $('#help-page').fadeIn();
-  }
+  };
   module.helpController = helpController;
-})(window)
+})(window);

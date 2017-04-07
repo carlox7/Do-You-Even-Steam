@@ -7,7 +7,6 @@ steamUser.all = [];
 steamUser.vanityUrl;
 leaderboard.scores = [];
 
-
 steamUser.requestSteamData = function(callback){
   $.ajax({
     url: '/games',
@@ -21,7 +20,7 @@ steamUser.requestSteamData = function(callback){
 
     // this is the sort by playtime function;
     steamUser.all.games.sort(function(a, b) {
-   return parseFloat(b.playtime_forever) - parseFloat(a.playtime_forever);
+      return parseFloat(b.playtime_forever) - parseFloat(a.playtime_forever);
 
     });
     steamUser.all.games.forEach(function(a){
@@ -30,23 +29,23 @@ steamUser.requestSteamData = function(callback){
   })
   .then(() => {
     steamUser.totalTimePlayed();
-  })
+  });
 };
 
 $('#steam-form').submit(function(event){
   event.preventDefault();
   event.stopPropagation();
   if($.isNumeric($('#steam-form input').val()) && ($('#steam-form input').val().length == 17)){
-    steamUser.steamId = $('#steam-form input').val()
+    steamUser.steamId = $('#steam-form input').val();
     steamUser.requestSteamData(steamUser.steamId);
     statsController.init();
-    localStorage.setItem("steamId", $('#steam-form input').val())
+    localStorage.setItem('steamId', $('#steam-form input').val());
   }
 
   else {
-  steamUser.vanityUrl = $('#steam-form input').val();
-  steamUser.requestSteamId(steamUser.requestSteamData);
-  statsController.init();
+    steamUser.vanityUrl = $('#steam-form input').val();
+    steamUser.requestSteamId(steamUser.requestSteamData);
+    statsController.init();
   }
 });
 
@@ -55,7 +54,7 @@ steamUser.showStatsPage = function(){
     steamUser.steamId = localStorage.steamId;
     steamUser.requestSteamData();
   }
-}
+};
 
 steamUser.requestSteamId = function(callback) {
   $.ajax({
@@ -67,9 +66,9 @@ steamUser.requestSteamId = function(callback) {
   })
   .then(data =>{
     steamUser.steamId = data;
-    localStorage.setItem("steamId", steamUser.steamId)
+    localStorage.setItem('steamId', steamUser.steamId);
   })
-  .then(callback)
+  .then(callback);
 };
 
 //Maps total time played for each game and compares them to time of listed activities
@@ -84,7 +83,7 @@ steamUser.totalTimePlayed = () => {
   steamUser.harryPotterShame = Number(steamUser.totalTime / 59).toFixed(2);
   steamUser.pokemonShame = Number(steamUser.totalTime / 50).toFixed(2);
   steamUser.codeFellowsShame = Number(steamUser.totalTime / 810).toFixed(2);
-  steamUser.friendsShame = Number(steamUser.totalTime / 83).toFixed(2)
+  steamUser.friendsShame = Number(steamUser.totalTime / 83).toFixed(2);
   steamUser.tenKShame = Number((steamUser.totalTime / 10000) * 100).toFixed(2);
   steamUser.spaceShame = Number(steamUser.totalTime * 17150).toFixed(2);
   steamUser.toHtml();
@@ -92,17 +91,16 @@ steamUser.totalTimePlayed = () => {
 
 };
 
-
 steamUser.insertRecord = function(callback) {
-    $.ajax({
-      url : '/leaderboard',
-      method: 'POST',
-      headers:{
-        name: steamUser.vanityUrl,
-        time: steamUser.totalTime
-      }
+  $.ajax({
+    url : '/leaderboard',
+    method: 'POST',
+    headers:{
+      name: steamUser.vanityUrl,
+      time: steamUser.totalTime
+    }
   });
-}
+};
 
 steamUser.getTable = function(classback) {
   $.ajax({
@@ -121,10 +119,10 @@ steamUser.getTable = function(classback) {
         leaderboard.scores.push(new Score(a.name,a.time));
       }
       leaderboard.scores.sort(function(a, b) {
-      return parseFloat(b.time) - parseFloat(a.time);
+        return parseFloat(b.time) - parseFloat(a.time);
       });
-    })
-  }).then(steamUser.leaderboard)
-}
+    });
+  }).then(steamUser.leaderboard);
+};
 
 steamUser.showStatsPage();
