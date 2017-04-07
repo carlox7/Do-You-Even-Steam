@@ -31,6 +31,9 @@ steamUser.requestSteamData = function(callback){
   .then(() => {
     steamUser.totalTimePlayed();
   })
+  .then(() => {
+    steamUser.insertRecord();
+  })
 };
 
 $('#steam-form').submit(function(event){
@@ -38,9 +41,10 @@ $('#steam-form').submit(function(event){
   event.stopPropagation();
   if($.isNumeric($('#steam-form input').val()) && ($('#steam-form input').val().length == 17)){
     steamUser.steamId = $('#steam-form input').val()
+    steamUser.vanityUrl = 'No Vanity Name'
     steamUser.requestSteamData(steamUser.steamId);
     statsController.init();
-    localStorage.setItem("steamId", $('#steam-form input').val())
+    // localStorage.setItem("steamId", $('#steam-form input').val())
   }
 
   else {
@@ -50,12 +54,12 @@ $('#steam-form').submit(function(event){
   }
 });
 
-steamUser.showStatsPage = function(){
-  if (localStorage.steamId){
-    steamUser.steamId = localStorage.steamId;
-    steamUser.requestSteamData();
-  }
-}
+// steamUser.showStatsPage = function(){
+//   if (localStorage.steamId){
+//     steamUser.steamId = localStorage.steamId;
+//     steamUser.requestSteamData();
+//   }
+// }
 
 steamUser.requestSteamId = function(callback) {
   $.ajax({
@@ -67,7 +71,7 @@ steamUser.requestSteamId = function(callback) {
   })
   .then(data =>{
     steamUser.steamId = data;
-    localStorage.setItem("steamId", steamUser.steamId)
+    // localStorage.setItem("steamId", steamUser.steamId)
   })
   .then(callback)
 };
@@ -114,10 +118,11 @@ steamUser.getTable = function(classback) {
       this.name = name;
       this.time = time;
     };
-    var names = [];
+    var names = leaderboard.scores;
+    leaderboard.scores = [];
     results.forEach(function(a){
       if(!names.includes(a.name)){
-        names.push(a.name);
+        names.push(a.name)
         leaderboard.scores.push(new Score(a.name,a.time));
       }
       leaderboard.scores.sort(function(a, b) {
@@ -127,4 +132,4 @@ steamUser.getTable = function(classback) {
   }).then(steamUser.leaderboard)
 }
 
-steamUser.showStatsPage();
+// steamUser.showStatsPage();

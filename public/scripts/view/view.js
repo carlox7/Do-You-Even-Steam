@@ -17,9 +17,9 @@ steamUser.gamesToHtml = function (){
 };
 steamUser.leaderboard = function(){
   let template = Handlebars.compile($('#leaderboard-template').text());
-  $('#leaderboard').empty();
+  $('#leaderboard-list').empty();
   let scoresArray = leaderboard.scores;
   scoresArray.forEach(function(a){
-    $('#leaderboard').append(template(a));
+    $('#leaderboard-list').append(template(a));
   })
 }
